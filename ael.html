@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cls assigment</title>
+    <style>
+        .cir{
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div></div>
+    <div id="img1"><img class=".img1" src="./R.png" height="300px" width="300px"></div>
+    <script>
+        var d1=document.querySelector("#img1");
+        d1.addEventListener("click",()=>{
+            d1.innerHTML='<img class=".img1" src="./R (1).png" alt="Emoji" height="300px" width="300px"'
+        })
+    </script> -->
+    <center>
+        <h1>Click on the image</h1>
+        <img id="img" src="./R.png" onclick="changeImage()" width="300px" height="300px">
+        <br><br><br>
+        <h1>Hover the circle</h1>
+        <div class="cir"></div>
+    </center>
+    
+    <script>
+        function changeImage(){
+            var img=document.getElementById("img");
+            if(img.src.match("R.png")){
+                img.src="R (1).png"
+            }else{
+                img.src="R.png"
+            }
+        }
+        let cir=document.querySelector(".cir");
+        cir.addEventListener('mouseover',()=>{
+            cir.style.backgroundColor="blue";
+            cir.style.transform='scale(1.2)';
+        })
+        cir.addEventListener('mouseout',()=>{
+            cir.style.backgroundColor="purple";
+            cir.style.transform='scale(1)';
+
+        })
+    </script>
+</body>
+</html>
